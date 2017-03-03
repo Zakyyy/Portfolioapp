@@ -1,0 +1,58 @@
+<h2 class="page-header">Welcome</h2>
+<h3>Here are the Projects created</h3>
+<br>
+<br>
+<ul class="projects_list">
+  {{#each project}}
+  <li>
+    User:{{this.userid}}
+      <ul>
+            <li> title: {{this.title}}</li>
+            <li> description: {{this.description}}</li>
+            {{#if this.Url}}
+            <li>URL:<a href="{{this.URL}}">go to website</a></li>
+            {{/if}}
+            {{#if this.screenshot}}
+            <li><img src="/{{this.screenshot}}" ></li>
+            {{/if}}
+
+    </ul>
+
+  </li>
+
+  {{/each}}
+</ul>
+<ul class="balabizo-container"></ul>
+
+<script id="port" type="text/x-handlebars-template">
+
+</script>
+{{#pagination 1 10 5}}
+<div class="pagination">
+  {{#unless startFromFirstPage}}
+    <a href="#">&lt;</a>
+  {{/unless}}
+
+  {{#each pages}}
+    {{#if isCurrent}}
+      [<a href="#">{{page}}</a>]
+    {{/if}}
+    {{#unless isCurrent}}
+      <a href="#">{{page}}
+      </a>
+    {{/unless}}
+  {{/each}}
+
+  <!-- {{#each pages}}
+
+  <ul>
+    {{this.title}}
+  </ul>
+
+  {{/each}} -->
+
+  {{#unless endAtLastPage}}
+    <a href="#">&gt;</a>
+  {{/unless}}
+</div>
+{{/pagination}}

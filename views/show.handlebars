@@ -1,0 +1,21 @@
+<h2 class="page-header">ME</h2>
+
+<ul class="projects_list">
+  {{#each project}}
+
+  <li>
+    <ul>
+        <li>{{this.title}}</li>
+        <li>{{this.description}}</li>
+        {{#if this.URL}}
+        <li><a href="{{this.URL}}">{{this.URL}}</a></li>
+        {{/if}}
+        {{#if this.screenshot}}
+        <li><img src="/{{this.screenshot}}"></li>
+        {{/if}}
+    </ul>
+  </li>
+  <br>
+  <br>
+  {{/each}}
+</ul>

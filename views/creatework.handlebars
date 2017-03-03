@@ -1,0 +1,28 @@
+<h2 class="page-header">Create Work</h2>
+<form method="post" action="/projects/project">
+  <div class="form-group">
+      <label>Title</label>
+      <input name = "title" type="text" class="form-control"placeholder="Title">
+  </div>
+  <div class="form-group">
+      <label>Description</label>
+      <input name = "description" type="text" class="form-control"placeholder="Descriptions">
+  </div>
+  <div class="form-group">
+      <label>Link</label>
+      <input name = "URL" type="url" class="form-control" placeholder="Link">
+  </div>
+  <br>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<br>
+<br>
+
+<h3>attach screen shot (Optional)</h3>
+<form enctype="multipart/form-data" method="POST" action="/projects/attachScreenShot">
+  <p>  Please specify a file:<br></p>
+    <input type="file" name="workPhoto">
+    <button type="submit" class="btn btn-default">Attach</button>
+    <span>{{scsrc}}</span>
+  </p>
+</form>
